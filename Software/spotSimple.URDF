@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+<robot name="Dog">
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="yellow">
+  <color rgba="1 1 0 1"/>
+  </material>
+
+  <material name="black">
+  <color rgba="0 0 0 1"/>
+  </material>
+
+    <material name="grey">
+  <color rgba="0.6 0.6 0.5 1"/>
+  </material>
+
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.18 0.09 0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.01"/>
+      <material name="yellow"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.18 0.09 0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.01"/>
+    </collision>
+    <inertial>
+      <mass value="100"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+
+
+
+
+
+  <link name="lf_shoulder">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+  </link>
+  <joint name="base_to_lf_shoulder" type="continuous">
+    <parent link="base_link"/>
+    <child link="lf_shoulder"/>
+     <origin xyz="0.10 0.05 0.01"/>
+     <axis xyz="1 0 0"/>
+  </joint>
+  <link name="lf_thigh">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="lf_shoulder" type="continuous">
+    <parent link="lf_shoulder"/>
+    <child link="lf_thigh"/>
+    <origin xyz="0 0 0 "/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lf_knee">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+      <collision>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="lf_thigh_to_lf_knee" type="fixed">
+    <parent link="lf_thigh"/>
+    <child link="lf_knee"/>
+      <origin xyz="0 0 -0.05"/>
+  </joint>
+  <link name="lf_shin">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="lf_knee" type="continuous">
+    <parent link="lf_knee"/>
+    <child link="lf_shin"/>
+    <origin xyz="0 0 0 "/>
+     <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lf_foot">
+    <visual>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="lf_shin_to_lf_foot" type="fixed">
+    <parent link="lf_shin"/>
+    <child link="lf_foot"/>
+     <origin xyz="0 0 -0.05"/>
+  </joint>
+
+
+
+
+
+
+<!--   right front shoulder                                                        -->
+
+  <link name="rf_shoulder">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+  </link>
+  <joint name="base_to_rf_shoulder" type="continuous">
+    <parent link="base_link"/>
+    <child link="rf_shoulder"/>
+     <origin xyz="0.10 -0.05 0.01"/>
+     <axis xyz="1 0 0"/>
+  </joint>
+  <link name="rf_thigh">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="rf_shoulder" type="continuous">
+    <parent link="rf_shoulder"/>
+    <child link="rf_thigh"/>
+    <origin xyz="0 0 0 "/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="rf_knee">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+      <collision>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="rf_thigh_to_rf_knee" type="fixed">
+    <parent link="rf_thigh"/>
+    <child link="rf_knee"/>
+      <origin xyz="0 0 -0.05"/>
+  </joint>
+  <link name="rf_shin">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="rf_knee_" type="continuous">
+    <parent link="rf_knee"/>
+    <child link="rf_shin"/>
+    <origin xyz="0 0 0 "/>
+     <axis xyz="0 1 0"/>
+  </joint>
+  <link name="rf_foot">
+    <visual>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="rf_shin_to_rf_foot" type="fixed">
+    <parent link="rf_shin"/>
+    <child link="rf_foot"/>
+     <origin xyz="0 0 -0.05"/>
+  </joint>
+
+
+
+<!--   right back shoulder                                                        -->
+
+  <link name="rb_shoulder">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+  </link>
+  <joint name="base_to_rb_shoulder" type="continuous">
+    <parent link="base_link"/>
+    <child link="rb_shoulder"/>
+     <origin xyz="-0.10 -0.05 0.01"/>
+     <axis xyz="1 0 0"/>
+  </joint>
+  <link name="rb_thigh">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="rb_shoulder" type="continuous">
+    <parent link="rb_shoulder"/>
+    <child link="rb_thigh"/>
+    <origin xyz="0 0 0 "/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="rb_knee">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+      <collision>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="rb_thigh_to_rb_knee" type="fixed">
+    <parent link="rb_thigh"/>
+    <child link="rb_knee"/>
+      <origin xyz="0 0 -0.05"/>
+  </joint>
+  <link name="rb_shin">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="rb_knee" type="continuous">
+    <parent link="rb_knee"/>
+    <child link="rb_shin"/>
+    <origin xyz="0 0 0 "/>
+     <axis xyz="0 1 0"/>
+  </joint>
+  <link name="rb_foot">
+    <visual>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="rb_shin_to_rb_foot" type="fixed">
+    <parent link="rb_shin"/>
+    <child link="rb_foot"/>
+     <origin xyz="0 0 -0.05"/>
+  </joint>
+
+
+
+
+
+<!--   left back arm                                                        -->
+
+  <link name="lb_shoulder">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+  </link>
+  <joint name="base_to_lb_shoulder" type="continuous">
+    <parent link="base_link"/>
+    <child link="lb_shoulder"/>
+     <origin xyz="-0.10 0.05 0.01"/>
+     <axis xyz="1 0 0"/>
+  </joint>
+  <link name="lb_thigh">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="lb_shoulder" type="continuous">
+    <parent link="lb_shoulder"/>
+    <child link="lb_thigh"/>
+    <origin xyz="0 0 0 "/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lb_knee">
+    <visual>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+      <collision>
+      <geometry>
+        <sphere  radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="lb_thigh_to_lb_knee" type="fixed">
+    <parent link="lb_thigh"/>
+    <child link="lb_knee"/>
+      <origin xyz="0 0 -0.05"/>
+  </joint>
+  <link name="lb_shin">
+    <visual>
+      <geometry>
+        <box size=" 0.005 0.005 0.05"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+        <material name="yellow"/>
+    </visual>
+  </link>
+  <joint name="lb_knee" type="continuous">
+    <parent link="lb_knee"/>
+    <child link="lb_shin"/>
+    <origin xyz="0 0 0 "/>
+     <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lb_foot">
+    <visual>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere  radius="0.008"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="lb_shin_to_lb_foot" type="fixed">
+    <parent link="lb_shin"/>
+    <child link="lb_foot"/>
+     <origin xyz="0 0 -0.05"/>
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</robot>
