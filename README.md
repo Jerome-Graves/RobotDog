@@ -5,11 +5,11 @@ An easy quadruped made using python and C++.
 It uses __pybullet__ and a URDF file for simulation and __ikpy__ for the inverse kinematic calculations.
 <br/>
 This is a remix of my final year project 
-[Quadrupedal robotic Platform for research on legged motion](https://www.researchgate.net/project/Quadrupedal-Robotic-Platform-For-Research-on-Legged-Motion-Planning)
-. It was origional built in a week during christmas holidays. (the UK was in lockdown, not much to do :confused:.) I am still looking though old files and fixed old code.
+<a href="https://www.researchgate.net/project/Quadrupedal-Robotic-Platform-For-Research-on-Legged-Motion-Planning" target="_blank">Quadrupedal robotic Platform for research on legged motion</a>. It was origional built in a week during christmas holidays. (the UK was in lockdown, not much to do :confused:.) I am still looking though old files and fixed old code.
+Find more of my work : <a href="http://jeromegraves.com/" target="_blank">jeromegraves.com</a>
 
 ## Whats Here
-###MiniQuad Firmware
+### MiniQuad Firmware
 There are 2 firmware arduino .ino files. The first is for a smaller quad (I'll find the CAD). This one has an IMU for detecting body rotation and 12 servos. The robot walk on the sopt lifting 2 diagonal legs at a time. It then uses filtering and PID tuning of the rotational data from the IMU to modify the walk to stay balanced.
 
 ### MiniQuad2
