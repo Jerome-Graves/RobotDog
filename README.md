@@ -2,10 +2,11 @@
 
 An easy quadruped made using python and C++. It uses:
 <br/>
-- 3D printed parts 12 cheap SG90 servos (£1 each)
-- a 3mm plywood base 
+- 3D printed parts 
+- 12 cheap SG90 servos (£1 each)
+- 3mm plywood base 
 - ESP32 and a 9-DOF Absolute Orientation IMU.
-- </br>
+ </br>
 It uses __pybullet__ and a URDF file for simulation and __ikpy__ for the inverse kinematic calculations.
 <br/>
 This is a remix of my final year project 
