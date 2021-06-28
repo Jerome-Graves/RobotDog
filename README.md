@@ -1,7 +1,8 @@
-# RobotDog - £20 open-source quadruped (not including 3D printer)
+# RobotDog -  inexpensive open-source quadruped 
 ## About
 An easy quadruped made using python and C++.
 <br/>
+it uses 3D printed parts, 12 cheap SG90 servos (£1 each), a 3mm plywood base, ESP32 and a 9-DOF Absolute Orientation IMU. 
 It uses __pybullet__ and a URDF file for simulation and __ikpy__ for the inverse kinematic calculations.
 <br/>
 This is a remix of my final year project 
