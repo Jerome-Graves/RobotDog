@@ -12,7 +12,8 @@
 const char * ssid = "dog-net";
 const char * password = "dog123";
 
-TaskHandle_t Task1;
+
+
 
 // Set your Static IP address
 IPAddress local_IP(10, 0, 0, 88);
