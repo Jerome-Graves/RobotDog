@@ -1,7 +1,12 @@
-# RobotDog - £20 open-source quadruped (not including 3D printer)
-## About
-An easy quadruped made using python and C++.
+# RobotDog -  inexpensive open-source quadruped 
+
+An easy quadruped made using python and C++. It uses:
 <br/>
+- 3D printed parts 
+- 12 cheap SG90 servos (£1 each)
+- 3mm plywood base 
+- ESP32 and a 9-DOF Absolute Orientation IMU.
+ </br>
 It uses __pybullet__ and a URDF file for simulation and __ikpy__ for the inverse kinematic calculations.
 <br/>
 This is a remix of my final year project 
@@ -46,9 +51,11 @@ It should have:
 - IMU unit (not sure which one)
 
 ## ToDO
-- Add ESP code to the repo.
-- Compute IK on ESP (very slow in python).
-- Add walk cycles.
+- Compute IK on ESP32.
+- Add walk cycle.
 - Add Bluetooth controller support.
-- finish parts list
-- test battery
+- finish parts list.
+- Test battery.
+- Modify control to send four 3D vectors instead of 12 joint rotations.
+- Add Bluetooth interface.
+- ROS2 intergration?
