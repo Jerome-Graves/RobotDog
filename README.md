@@ -20,6 +20,7 @@ There are two firmware Arduino files.
  The first is for a smaller quad (I'll find the CAD). This one has an IMU for detecting body rotation and 12 servos. The robot walks on the spot lifting two diagonal legs at a time. It then uses filtering and PID tuning of the rotational data from the IMU to modify the walk to stay balanced.
 ![Dog CAD Picture](images/dog-cad-2.png?raw=true "Dog CAD 1")
 </br>
+
 ### MiniQuad2
 MiniQuad 2 recives servo position information over UDP from a PC.
 All the IK and control is done in python (__QuadGUI.py__). There is no IMU (rotation) sensor. This is just an experiment(failed) with IK in python. You can manipulate the position and rotation of the torso of the robot.
@@ -27,7 +28,8 @@ All the IK and control is done in python (__QuadGUI.py__). There is no IMU (rota
 There is also code to run a simple simulation of the quad using __pybullet__ and the __spotSimple.URDF__ file (__QuadSimpulation.py__).
 <br/>
 Run both __QuadGUI.py__ and __QuadSimulation.py__ to test without hardware.
-![Dog CAD Picture](images/dog-cad.png?raw=true "Dog CAD 2")
+![Dog CAD Picture](images/sim-eg.png?raw=false "Simulation")
+![Dog CAD Picture](images/dog-cad.png?raw=false "Dog CAD 2")
 <br/>
 ### MiniQuad3 (Todo)
 I didn't finish this remix as I ran out of free time.
