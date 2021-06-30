@@ -31,10 +31,10 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 planeId = p.loadURDF("plane.urdf")
 
 
-p.setAdditionalSearchPath(
-    "C:/Users/YungThunder/Documents/GitHub/RobotDog/Software")  # optionally
+#p.setAdditionalSearchPath("")
+
 p.setGravity(0, 0, -10)
-#
+
 startPos = [0, 0, 0.10]
 startOrientation = p.getQuaternionFromEuler([0, 0, 0])
 dogId = p.loadURDF("spotSimple.urdf", startPos, startOrientation)
