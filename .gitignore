@@ -1,3 +1,2 @@
-# Auto detect text files and perform LF normalization
-/.vscode
-/__pycache__
+/python/.vscode
+/python/__pycache__
