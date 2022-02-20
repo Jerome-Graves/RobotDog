@@ -1,5 +1,5 @@
-# RobotDog -  inexpensive open-source quadruped 
-
+# RobotDog -  inexpensive open-source quadruped (NOT ACTIVE)
+# This project is now the <a href="https://github.com/Jerome-Graves/yertle">Yertle</a> project
 An easy quadruped made using python and C++. It uses:
 <br/>
 - 3D printed parts 
